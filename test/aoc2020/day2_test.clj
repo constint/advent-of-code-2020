@@ -14,4 +14,4 @@
 
 (deftest check-answer2
   (testing "Answer part 2 is correct"
-           (is (= (answer2 input) 100655544))))
+           (is (= (answer2 input) 690))))
