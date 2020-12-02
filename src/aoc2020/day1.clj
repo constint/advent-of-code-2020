@@ -1,7 +1,7 @@
 (ns aoc2020.day1
   (:gen-class))
 
-(defn pairs-that-sums-to-2020 [input]
+(defn pairs-that-sum-to-2020 [input]
   (filter some?
           (for [i input
                 j input]
@@ -11,10 +11,10 @@
               [i j]))))
 
 (defn answer1 [input]
-  (apply * (first (pairs-that-sums-to-2020 input))))
+  (apply * (first (pairs-that-sum-to-2020 input))))
 
 
-(defn triples-that-sums-to-2020 [input]
+(defn triples-that-sum-to-2020 [input]
   (filter some?
           (for [i input
                 j input
@@ -25,4 +25,4 @@
               [i j k]))))
 
 (defn answer2 [input]
-  (apply * (first (triples-that-sums-to-2020 input))))
+  (apply * (first (triples-that-sum-to-2020 input))))
