@@ -25,14 +25,18 @@
 
 (deftest example
   (testing "Test example"
-           (is (= (trajectory-treecount test-input) 7))))
+           (is (= (trajectory-treecount test-input [3 1]) 7))))
 
-(run-all-tests)
 
 (deftest check-answer1
   (testing "Answer part 1 is correct"
-           (is (= (trajectory-treecount input) 211))))
+           (is (= (trajectory-treecount input [3 1]) 211))))
 
-;(deftest check-answer2
-;  (testing "Answer part 2 is correct"
-;           (is (= (answer2 input) 690))))
+
+(deftest check-answer2
+  (testing "Answer part 2 is correct"
+           (is
+            (=
+             (slopes-tree-multiple input
+                                   [[1 1] [3 1] [5 1] [7 1] [1 2]])
+             3584591857))))
