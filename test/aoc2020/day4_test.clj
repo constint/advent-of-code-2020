@@ -5,7 +5,6 @@
 
 (def input (slurp "resources/day4.txt"))
 
-
 (deftest check-answer1
   (testing "Answer part 1 is correct"
            (is (= (valid-passport-count-v1 input) 250))))

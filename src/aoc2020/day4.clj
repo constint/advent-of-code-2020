@@ -47,10 +47,10 @@
       (catch Exception _
         :clojure.spec/invalid))))
 
-(s/def ::integer-string? (comp integer? str->int))
+(s/def ::integer-string (comp integer? str->int))
 
 (defn custom-string-spec [length lower-bound upper-bound]
-  (s/and ::integer-string?
+  (s/and ::integer-string
          #(= (.length %) length)
          #(<= lower-bound (str->int %) upper-bound)))
 
@@ -80,5 +80,5 @@
 
 (s/def :v2/pid
        (s/and
-        ::integer-sting?
+        ::integer-string
         #(= (.length %) 9)))
