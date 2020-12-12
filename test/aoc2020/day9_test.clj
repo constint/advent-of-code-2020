@@ -35,14 +35,13 @@
 
 (deftest check-answer1
   (testing "Answer part 1 is correct"
-           (is (= (find-invalid-value (input->numbers input) 25) 1384))))
+           (is (= (find-invalid-value (input->numbers input) 25) 552655238))))
 
-;
-;(deftest simple-test-2
-;  (testing "Check with simple test for answer2"
-;           (is (= "" 8))))
-;;
-;(deftest check-answer2
-;  (testing "Answer part 2 is correct"
-;           (is (= "" 761))))
-;(run-all-tests)
+(deftest simple-test-2
+  (testing "Check with simple test for answer2"
+           (is (= (answser2 testinput 127) 62))))
+
+(deftest check-answer2
+         (testing "Answer part 2 is correct"
+                  (is (= (answser2 (input->numbers input) 552655238) 70672245))))
+

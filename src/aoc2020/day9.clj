@@ -23,3 +23,26 @@
       (if-not (naive-valid? (take preamble-size numbers) (nth numbers preamble-size)) ;; Check number just after the preamble
         (nth numbers preamble-size)
         (recur (drop 1 numbers))))))
+
+;; PART 2
+
+(defn find-matching-sumlength [numbers value]
+  (loop [numbers numbers
+         sum     0
+         index   0]
+    (if (= sum value)
+      index
+      (if-not (> sum value)
+        (if-some [x (first numbers)]
+          (recur (rest numbers) (+ sum x) (+ index 1)))))))
+
+(defn find-answer2-range [numbers sum]
+  (loop [numbers numbers]
+    (if-not (empty? numbers)
+      (if-let [sum-length (find-matching-sumlength numbers sum)]
+        (take sum-length numbers)
+        (recur (drop 1 numbers))))))
+
+(defn answser2 [numbers sum]
+  (let [sorted-answer-range (sort  (find-answer2-range numbers sum))]
+    (+ (first sorted-answer-range) (last sorted-answer-range))))
