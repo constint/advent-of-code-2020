@@ -23,3 +23,20 @@ dotted black bags contain no other bags.")
 (deftest check-answer1
   (testing "Answer part 1 is correct"
            (is (= (count (possible-containers input "shiny gold bag")) 164))))
+
+(def testinput2
+  "shiny gold bags contain 2 dark red bags.
+dark red bags contain 2 dark orange bags.
+dark orange bags contain 2 dark yellow bags.
+dark yellow bags contain 2 dark green bags.
+dark green bags contain 2 dark blue bags.
+dark blue bags contain 2 dark violet bags.
+dark violet bags contain no other bags.")
+
+(deftest simple-test-2
+  (testing "Check with simple test for answer2"
+           (is (= (count-bags (input->bag-map2 testinput2) "shiny gold bag") 126))))
+
+(deftest check-answer2
+  (testing "Answer part 2 is correct"
+           (is (= (count-bags (input->bag-map2 input) "shiny gold bag") 7872))))
