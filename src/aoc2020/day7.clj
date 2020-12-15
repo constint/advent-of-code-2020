@@ -51,9 +51,9 @@
                                            (clojure.string/replace #"\." ""))
         [_ container contained-string] (re-matches #"(.+) contain (.+)" preprocessed)
         contained-elts                 (clojure.string/split contained-string #", ")
-        _                              (prn "contained elts" contained-elts)
+;        _                              (prn "contained elts" contained-elts)
         contained-entries              (map bag-elt->entry contained-elts)]
-    (prn "contained entries" contained-entries)
+;    (prn "contained entries" contained-entries)
     [container (into {} contained-entries)]))
 
 (defn input->bag-map2 [input]
