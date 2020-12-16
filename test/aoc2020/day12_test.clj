@@ -24,15 +24,15 @@ F11")
             (= (input->answer1 input)
                2458))))
 
-;(deftest simple-test-2
-;  (testing
-;   "Check with simple test part2"
-;   (is
-;    (= (input->answer2 testinput)
-;       26))))
-;
-;(deftest check-answer1
-;  (testing "Answer part 2 is correct"
-;           (is
-;            (= (input->answer2 input)
-;               1862))))
+(deftest simple-test-2
+  (testing
+   "Check with simple test part2"
+   (is
+    (= (input->answer2 testinput)
+       286))))
+
+(deftest check-answer1
+  (testing "Answer part 2 is correct"
+           (is
+            (= (input->answer2 input)
+               145117))))
