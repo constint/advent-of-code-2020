@@ -11,7 +11,7 @@
 (deftest check-answer1
   (testing "Answer part 1 is correct"
            (is
-            (= (answer1 [15, 5, 1, 4, 7, 0] 2020) 259))))
+            (= (answer1 [15, 5, 1, 4, 7, 0] 2020) 1259))))
 
 ;(deftest check-answer2
 ;  (testing "Answer part 2 is correct"
